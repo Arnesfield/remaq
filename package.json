@@ -1,4 +1,17 @@
 {
+  "name": "remaq",
+  "version": "0.0.1",
+  "description": "Remap data and convert to PostgreSQL select query using json/b_to_recordset.",
+  "homepage": "https://github.com/Arnesfield/remaq#readme",
+  "bugs": {
+    "url": "https://github.com/Arnesfield/remaq/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arnesfield/remaq.git"
+  },
+  "license": "MIT",
+  "author": "Jefferson Rylee <rylee.jeff385@gmail.com>",
   "sideEffects": false,
   "type": "module",
   "exports": {
