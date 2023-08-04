@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2020",
+    "lib": ["ESNext"],
+    "strict": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*", "**/*.spec.ts", "rollup.config.ts"],
+  "exclude": ["node_modules", "lib", "tmp", "fixtures"]
+}

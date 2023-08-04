@@ -1,0 +1,28 @@
+{
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "types": "./lib/index.d.ts",
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs",
+    "default": "./lib/index.mjs"
+  },
+  "main": "lib/index.cjs",
+  "jsdelivr": "lib/index.umd.min.js",
+  "unpkg": "lib/index.umd.min.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:strict": "npm run lint -- --max-warnings 0",
+    "start": "npm run build -- -w --no-watch.clearScreen",
+    "test": "concurrently -r --kill-others-on-fail npm:test:mocha npm:lint:strict \"tsc --skipLibCheck\"",
+    "test:mocha": "mocha -r tsx **/*.spec.ts",
+    "test:watch": "npm run test:mocha -- --watch --watch-files src,test"
+  }
+}
