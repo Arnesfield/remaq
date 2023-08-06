@@ -8,7 +8,7 @@ module.exports = {
   rules: {
     'no-constant-condition': 0,
     'no-unused-vars': 0,
-    quotes: [1, 'single', 'avoid-escape'],
+    quotes: [1, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     '@typescript-eslint/explicit-module-boundary-types': 1,
     '@typescript-eslint/no-empty-function': 0,
     '@typescript-eslint/no-explicit-any': 0,
