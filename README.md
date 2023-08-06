@@ -1,8 +1,9 @@
-_**Disclaimer**: This version of the package does not contain any tests and is considered to be unstable. Use at your own risk._
+_**Disclaimer**: This version of the package does not contain full tests and is considered to be unstable. Use at your own risk._
 
 # remaq
 
 [![npm](https://img.shields.io/npm/v/remaq.svg)](https://www.npmjs.com/package/remaq)
+[![Node.js CI](https://github.com/Arnesfield/remaq/workflows/Node.js%20CI/badge.svg)](https://github.com/Arnesfield/remaq/actions?query=workflow%3A"Node.js+CI")
 
 Remap data and convert to PostgreSQL select query using `json/b_to_recordset`.
 
