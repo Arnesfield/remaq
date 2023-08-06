@@ -3,6 +3,12 @@ import { getQuery } from '../utils/query';
 import { getRecords } from '../utils/records';
 import { getSchema } from '../utils/schema';
 
+/**
+ * Prepare {@linkcode data} to remap.
+ * @template TData The type of {@linkcode data}.
+ * @param data The data to remap.
+ * @returns The {@linkcode Remaq} object.
+ */
 export function remaq<TData extends { [K: keyof any]: any }>(
   data: TData | TData[]
 ): Remaq<TData, { [K in keyof TData]: any }> {
