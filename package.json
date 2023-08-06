@@ -41,24 +41,31 @@
     "lint": "eslint . --ext .js,.ts",
     "lint:strict": "npm run lint -- --max-warnings 0",
     "start": "npm run build -- -w --no-watch.clearScreen",
-    "test": "echo \"Warning: skipping test\" && exit 0",
-    "test:implemented": "concurrently -r --kill-others-on-fail npm:test:mocha npm:lint:strict \"tsc --skipLibCheck\"",
+    "test": "concurrently -r --kill-others-on-fail npm:test:mocha npm:lint:strict \"tsc --skipLibCheck\"",
     "test:mocha": "mocha -r tsx **/*.spec.ts",
     "test:watch": "npm run test:mocha -- --watch --watch-files src,test"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^9.0.4",
     "@rollup/plugin-typescript": "^11.1.2",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^20.4.8",
+    "@types/sinon": "^10.0.16",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
+    "chai": "^4.3.7",
+    "concurrently": "^8.2.0",
     "eslint": "^8.46.0",
+    "mocha": "^10.2.0",
     "rimraf": "^5.0.1",
     "rollup": "^3.27.2",
     "rollup-plugin-dts": "^5.3.1",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-output-size": "^1.2.2",
+    "sinon": "^15.2.0",
     "tslib": "^2.6.1",
+    "tsx": "^3.12.7",
     "typescript": "^5.1.6"
   }
 }
