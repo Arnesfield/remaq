@@ -22,6 +22,14 @@ export interface SchemaOptions<TFrom extends keyof any> {
    * If the remapping required is complex, prefer to remap the data manually using {@linkcode Remaq.each}.
    */
   remap?: { [K: keyof any]: any };
+  /**
+   * Validate the {@linkcode value} and throw an error if it is invalid.
+   *
+   * Validation only occurs after the value is {@linkcode remap}ped.
+   * @param value The value to validate.
+   * @returns Determines if the {@linkcode value} is valid or not.
+   */
+  validate?(value: any): boolean;
 }
 
 /**

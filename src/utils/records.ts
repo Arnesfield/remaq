@@ -21,20 +21,30 @@ export function getRecords<
     const record = {} as MappedRecord<TSchema>;
     for (const columnName in schema) {
       const options = schema[columnName];
+      const isObject = typeof options === 'object' && options !== null;
       let result =
         typeof options === 'string'
           ? item[options]
-          : typeof options === 'object' &&
-            options !== null &&
-            typeof options.from !== 'undefined'
+          : isObject && typeof options.from !== 'undefined'
           ? item[options.from]
           : null;
       // remap the result
-      if (typeof options === 'object' && options.remap) {
+      if (isObject && options.remap) {
         const { remap } = options;
         result = Array.isArray(result)
           ? result.map((item: keyof any) => mapValue(remap, item))
           : mapValue(remap, result as keyof any);
+      }
+      // validate result
+      if (
+        isObject &&
+        typeof options.validate === 'function' &&
+        !options.validate(result)
+      ) {
+        const arrayStr = Array.isArray(data) ? ` on data[${index}]` : '';
+        throw new Error(
+          `Property "${columnName}" validation failed${arrayStr}.`
+        );
       }
       record[columnName] = result;
     }
