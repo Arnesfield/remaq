@@ -6,12 +6,10 @@ export function getQuery<TSchema extends { [K: keyof any]: any }>(
   schema: TSchema,
   options: GetQueryOptions = {}
 ): GetQueryResults {
-  const rawJson =
-    typeof options.data === 'string' ? options.data : JSON.stringify(records);
-  const json = escapeLiteral(rawJson);
-
+  const json = escapeLiteral(
+    typeof options.data === 'string' ? options.data : JSON.stringify(records)
+  );
   const selects = Array.isArray(options.selects) ? options.selects : ['*'];
-
   const columns = Object.keys(schema).map(column => {
     const value = schema[column];
     const type =
