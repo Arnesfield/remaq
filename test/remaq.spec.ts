@@ -1,15 +1,15 @@
 import { expect } from 'chai';
 import { remaq } from '../src';
 
-function getObj() {
+function getData() {
   return { foo: 'Foo', bar: 'Bar' };
 }
 
 describe('remaq', () => {
-  let data = getObj();
+  let data = getData();
 
   beforeEach(() => {
-    data = getObj();
+    data = getData();
   });
 
   it('should be a function', () => {

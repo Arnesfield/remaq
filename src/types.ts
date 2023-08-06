@@ -25,7 +25,7 @@ export interface SchemaOptions<TFrom extends keyof any> {
   /**
    * Validate the {@linkcode value} and throw an error if it is invalid.
    *
-   * Validation only occurs after the value is {@linkcode remap}ped.
+   * Validation only occurs after the {@linkcode value} has beem {@linkcode remap}ped.
    * @param value The value to validate.
    * @returns Determines if the {@linkcode value} is valid or not.
    */
@@ -153,7 +153,7 @@ export interface Remaq<
   /**
    * Use the {@linkcode records} to create a PostgreSQL select query using `json/b_to_recordset`.
    * @param options The get query options.
-   * @returns The results.
+   * @returns The get query results.
    */
   getQuery(options?: GetQueryOptions): GetQueryResults;
 }
