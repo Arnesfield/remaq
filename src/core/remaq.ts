@@ -29,9 +29,7 @@ function remap<
       return (schema ||= getSchema(data));
     },
     records() {
-      if (records) {
-        return records;
-      } else if (records === null) {
+      if (records === null) {
         throw new Error('Cannot get `records` while it is being evaluated.');
       }
       // set to null first to avoid infinite recursion with `each` callback

@@ -89,6 +89,23 @@ describe('remaq', () => {
       expect(record).to.have.property('fooField2').that.equals(data.foo);
       expect(record).to.have.property('bazField2').that.equals(null);
     });
+
+    it('should always reevaluate records', () => {
+      const remap = remaq(data);
+      expect(remap.records()).to.not.equal(remap.records());
+
+      const remap2 = remaq(data).using({ fooField: 'foo', barField: 'bar' });
+      expect(remap2.records()).to.not.equal(remap2.records());
+
+      let count = 0;
+      const items = [data, data];
+      const remap3 = remaq(items).each(() => void count++);
+      expect(count).to.equal(0);
+      remap3.records();
+      expect(count).to.equal(items.length);
+      remap3.records();
+      expect(count).to.equal(items.length * 2);
+    });
   });
 
   describe('using', () => {
