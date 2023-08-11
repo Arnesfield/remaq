@@ -144,7 +144,11 @@ console.log(records);
 
 The schema is an object (of any property) that maps to a property from the data.
 
-You can assign the property directly or assign a `SchemaOptions` object.
+You can assign:
+
+- The property directly
+- A boolean value (value defaults to `null`)
+- A `SchemaOptions` object
 
 #### SchemaOptions.from
 
