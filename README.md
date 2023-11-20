@@ -61,7 +61,7 @@ const remap = remaq({ name: 'John Doe' });
 const remap = remaq([{ name: 'John Doe' }, { name: 'Jane Doe' }]);
 ```
 
-> **Tip**: For detailed typings, please see [types.ts](src/types.ts).
+> **Tip**: For detailed typings, please see [`types.ts`](src/types.ts).
 
 ### records()
 
@@ -269,7 +269,7 @@ Is the same reference: true
 
 ### getQuery(options?)
 
-Uses the records to create a PostgreSQL select query using `json/b_to_recordset`.
+Uses the records to create a PostgreSQL select query using `json/b_to_recordset`. Returns an object (`GetQueryResults` type).
 
 ```javascript
 const remap = remaq(data);
