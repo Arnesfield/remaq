@@ -1,6 +1,6 @@
 {
   "name": "remaq",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Remap data and convert to PostgreSQL select query using json/b_to_recordset.",
   "keywords": [
     "remap",
